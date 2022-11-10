@@ -1,0 +1,25 @@
+{
+    "name"          : "tjournal.ru",
+    "short_name"    : "TJ",
+    "gcm_sender_id" : "66784628106",
+    "display"       : "standalone",
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "ru.kraynov.app.tjournal"
+        }
+    ],
+    "icons": [
+        {
+            "src": "/static/build/tjournal.ru/favicons/android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/static/build/tjournal.ru/favicons/android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+.search, .navigation-create, .head-notifies, .navigation-user, .support, .notify {
+	display:none !important;
+}
