@@ -1,0 +1,3289 @@
+<!DOCTYPE html>
+<!--
+
+
+/╲/\[☉﹏☉]/\╱\ <-- Паук! Ааа! 🕷️
+
+
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="yandex-tableau-widget" content="logo=/img/logo.png, color=#fff4e2" />
+        <title>Вики-движки — Разработка на TJ</title>
+
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+        
+                    <!-- Mobile App Banner -->
+            <meta name="apple-itunes-app" content="app-id=683103523, app-argument=tjru://index">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext">
+
+        <!-- Meta -->
+        <meta property="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content="TJ" />
+<meta property="fb:app_id" content="506675079378064" />
+<meta property="vk:image" content="https://tjournal.ru/cover/vk/c/95147/1556395211/cover.jpg" />
+<meta property="twitter:image" content="https://tjournal.ru/cover/tw/c/95147/1556395211/cover.jpg" />
+<meta property="og:image" content="https://tjournal.ru/cover/fb/c/95147/1556395211/cover.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="315" />
+<meta property="og:title" content="Вики-движки — Разработка на TJ" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Родил я тут идеюВ одном направлении было бы полезно собирать информацию касаемо определённых процессов.Все банально, условно! на примере автопрома:Есть автомобиль, и нужно запилить мануал - как снять генератор, туда же может потом необходимо пихнуть инфу как сменить лампочкуНа каком движке можно было бы условно-бесплатно родить mvp? Какие…" />
+<meta name="description" content="Родил я тут идеюВ одном направлении было бы полезно собирать информацию касаемо определённых процессов.Все банально, условно! на примере автопрома:Есть автомобиль, и нужно запилить мануал - как снять генератор, туда же может потом необходимо пихнуть инфу как сменить лампочкуНа каком движке можно было бы условно-бесплатно родить mvp? Какие…" />
+<meta property="og:url" content="https://tjournal.ru/dev/95147-viki-dvizhki" />
+<link rel="canonical" href="https://tjournal.ru/dev/95147-viki-dvizhki">
+<meta name="author" content="Иван Вундермахер" />
+<meta property="article:author" content="https://www.facebook.com/tjournal/" />
+<meta property="article:publisher" content="https://www.facebook.com/tjournal/" />
+<meta property="article:published_time" content="2019-04-27T23:00:11+03:00" />
+<link rel="image_src" href="https://tjournal.ru/cover/fb/c/95147/1556395211/cover.jpg">
+
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <!-- Header color -->
+        
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <link rel="apple-touch-icon" href="../../img/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="../../img/apple-touch-icon-180x180.png">
+        <link rel="mask-icon" href="../../img/safari-pinned-tab.svg" color="#E8A427">
+
+        
+        <link rel="stylesheet" href="../../css/main.13a984d7.min.css">
+
+        <link rel="manifest" href="../../json/gcm-manifest.json">
+
+        <meta name="msapplication-tile-image" content="../../img/mstile-150x150.png">
+
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#fff4e2">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#fff4e2">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#fff4e2">
+
+                        <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NDH47H');
+    </script>
+        
+        <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "TJ",
+        "url": "https://tjournal.ru/",
+        "logo": "https://tjournal.ru/static/build/tjournal.ru/images/search_logo.png",
+        "sameAs":
+            
+            [
+    "https:\/\/facebook.com\/tjournal",
+    "https:\/\/vk.com\/tj",
+    "https:\/\/twitter.com\/tjournal",
+    "https:\/\/t.me\/TJournal",
+    "\/rss\/all"
+]    }
+</script>
+
+        <!-- Google AdSense verification for RTB -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4047172970672323"
+     crossorigin="anonymous"></script>
+<!-- Tj-vertical -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4047172970672323"
+     data-ad-slot="9077599732"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </head>
+
+    
+    <body class="app app--content-entry app--left-column-on app--right-column-on app--propaganda-on app--livestream-on app--content-sidebar-align-right app--right-column-reserve-on app--live-auto" data-country-code="HU" data-one-name="body">
+        <script>
+            /**
+             * Dealing with adblock class:
+             */
+
+            function getCookie(name) {
+              return (name = (document.cookie + ';').match(new RegExp(name + '=.*;'))) && name[0].split(/=|;/)[1];
+            }
+
+            if (getCookie('adblock-state') == 1) {
+                document.body.classList.add('app--ad-blocked');
+            } else {
+                document.body.classList.add('app--ad-allowed');
+            }
+        </script>
+
+                    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDH47H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        
+        <!-- Adfox "D 100%x150 / 100%х250" format -->
+        
+<div class="propaganda" data-id="1"></div>
+
+        <div class="site-header-container">
+    <vue name="site-header"></vue>
+</div>
+
+        <!-- Adfox "M 1200x400/600" format -->
+        
+<div class="propaganda" data-id="2"></div>
+
+        
+<div class="propaganda" data-id="17"></div>
+
+        
+<div class="propaganda" data-id="18"></div>
+
+        <div class="updown" air-module="module.updown" air-click="updown" air-dom="updown">
+            <div class="updown__icons">
+                
+                    <svg class="icon icon--ui_arrow_up" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_arrow_up"></use></svg>
+                
+                    <svg class="icon icon--ui_arrow_up" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_arrow_up"></use></svg>
+                
+                    <svg class="icon icon--ui_arrow_up" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_arrow_up"></use></svg>
+                            </div>
+        </div>
+
+        <div class="main layout">
+
+            <div class="layout__left-column layout__sticky">
+                <vue name="sidebar"></vue>
+                <div class="sidebar__tint"></div>
+            </div>
+
+            <div class="layout__content l-relative">
+
+                <!-- Adfox branding -->
+                <div id="adfox-branding-shifter"></div>
+                <div id="adfox-branding" class="lm-hidden"></div>
+                
+<div class="propaganda" data-id="4"></div>
+
+                <div id="page_wrapper">
+
+                    
+    <!-- Adfox "Микроостров под шапкой DM" format -->
+    
+<div class="propaganda" data-id="21"></div>
+
+    
+<!-- Render special in the entry top -->
+    
+<!-- Native support banner -->
+    
+
+<!-- #мегафон_какэтоработает branding -->
+
+
+<!-- Native branding from subsite settings -->
+    <!-- #ДРМ_конкурс branding article header -->
+    
+<!-- #vcru_spotify branding -->
+
+<!-- Special Igrozhur -->
+
+<div class="page page--entry">
+    
+    <!-- Microdata for search engines -->
+    
+<script type="application/ld+json">
+  {"@context":"http:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":{"@type":"ListItem","position":1,"item":{"@id":"\/\/tjournal.ru\/dev","name":"\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430"}}},{"@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tjournal.ru\/dev\/95147-viki-dvizhki"},"@id":95147,"headline":"\u0412\u0438\u043a\u0438-\u0434\u0432\u0438\u0436\u043a\u0438","image":{"@type":"ImageObject","url":"https:\/\/tjournal.ru\/cover\/fb\/c\/95147\/1556395211\/cover.jpg","width":1200,"height":630},"datePublished":"2019-04-27T23:00:11+03:00","dateModified":"2019-04-27T23:00:11+03:00","text":"\u0420\u043e\u0434\u0438\u043b \u044f \u0442\u0443\u0442 \u0438\u0434\u0435\u044e\u0412 \u043e\u0434\u043d\u043e\u043c \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u0431\u044b\u043b\u043e \u0431\u044b \u043f\u043e\u043b\u0435\u0437\u043d\u043e \u0441\u043e\u0431\u0438\u0440\u0430\u0442\u044c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043a\u0430\u0441\u0430\u0435\u043c\u043e \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u044b\u0445 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432.\u0412\u0441\u0435 \u0431\u0430\u043d\u0430\u043b\u044c\u043d\u043e, \u0443\u0441\u043b\u043e\u0432\u043d\u043e! \u043d\u0430 \u043f\u0440\u0438\u043c\u0435\u0440\u0435 \u0430\u0432\u0442\u043e\u043f\u0440\u043e\u043c\u0430:\u0415\u0441\u0442\u044c \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044c, \u0438 \u043d\u0443\u0436\u043d\u043e \u0437\u0430\u043f\u0438\u043b\u0438\u0442\u044c \u043c\u0430\u043d\u0443\u0430\u043b - \u043a\u0430\u043a \u0441\u043d\u044f\u0442\u044c \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440, \u0442\u0443\u0434\u0430 \u0436\u0435 \u043c\u043e\u0436\u0435\u0442 \u043f\u043e\u0442\u043e\u043c \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u043f\u0438\u0445\u043d\u0443\u0442\u044c \u0438\u043d\u0444\u0443 \u043a\u0430\u043a \u0441\u043c\u0435\u043d\u0438\u0442\u044c \u043b\u0430\u043c\u043f\u043e\u0447\u043a\u0443\u041d\u0430 \u043a\u0430\u043a\u043e\u043c \u0434\u0432\u0438\u0436\u043a\u0435 \u043c\u043e\u0436\u043d\u043e \u0431\u044b\u043b\u043e \u0431\u044b \u0443\u0441\u043b\u043e\u0432\u043d\u043e-\u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u0440\u043e\u0434\u0438\u0442\u044c mvp? \u041a\u0430\u043a\u0438\u0435 \u043f\u043e\u0434\u0432\u043e\u0434\u043d\u044b\u0435 \u043a\u0430\u043c\u043d\u0438?\u041a\u0430\u043a \u0431\u044b\u0442\u044c \u0441 \u043c\u043e\u043d\u0435\u0442\u0438\u0437\u0430\u0446\u0438\u0435\u0439 \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u043c, \u043a\u0440\u043e\u043c\u0435 \u043a\u0430\u043a \u0432\u043e\u0442\u043a\u043d\u0443\u0442\u044c \u0431\u0430\u043d\u043d\u0435\u0440 \u0438\u0434\u0435\u0439 \u043f\u043e\u043a\u0430 \u043d\u0435\u0442.","author":[{"@type":"Person","name":"\u0418\u0432\u0430\u043d \u0412\u0443\u043d\u0434\u0435\u0440\u043c\u0430\u0445\u0435\u0440 89086"}],"publisher":{"@type":"Organization","name":"TJ","logo":{"@type":"ImageObject","url":"https:\/\/tjournal.ru\/static\/build\/tjournal.ru\/images\/amp_logo.png","width":60,"height":60}},"about":[{"@type":"Event","name":"ArticleUGC"}],"url":"https:\/\/tjournal.ru\/dev\/95147-viki-dvizhki"}]}
+</script>
+
+    
+
+    <!-- Custom css from subsite settings -->
+    
+
+    <div class="l-entry  l-island-bg l-island-round lm-pt-16 l-pt-24 l-pb-30 " air-module="module.entry" data-content-id="95147" air-entry-type="full">
+
+        <!-- Применить версию из истории статьи -->
+        
+                    <div class="l-entry__header l-island-a">
+                
+
+<div class="
+content-header
+"
+>
+
+    <div class="content-header__info">
+        
+                <a class="content-header-author content-header-author--subsite content-header__item" href="https://tjournal.ru/dev">
+            <div class="content-header-author__avatar">
+                
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/867ff9bd-90fa-d769-8b7e-af8a4ff36c70/"
+    data-image-name=""
+            style=";background-color: #b8b8b8;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>            </div>
+
+            <div class="content-header-author__name">
+                Разработка            </div>
+
+                    </a>
+
+                            <a class="content-header-author content-header-author--user content-header__item" href="https://tjournal.ru/u/89086-ivan-vundermaher">
+                <div class="content-header-author__name">
+                    Иван Вундермахер                </div>
+
+                            </a>
+        
+                <div class="content-header__item content-header-number">
+                            <span class="lm-hidden">
+                    <time class="time" air-module="module.date" data-date="1556395211" data-type="default" title="27.04.2019 23:00:11 (Europe/Moscow)">27&nbsp;апр&nbsp;2019</time>                </span>
+                <span class="l-hidden lm-inline">
+                    <time class="time" air-module="module.date" data-date="1556395211" data-type="medium" title="27.04.2019 23:00:11 (Europe/Moscow)">27.04.2019</time>                </span>
+                    </div>
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+        
+        </div>
+
+
+    <h1 class="content-title" itemprop="headline">
+                    Вики-движки            </h1>
+            </div>
+        
+        <div class="l-entry__content">
+
+            <div data-io-article-url="https://tjournal.ru/dev/95147-viki-dvizhki">
+
+                
+<div class="content content--full ">
+            
+        
+        
+        
+            <div class="l-island-a">
+    
+        <p>Родил я тут идею<br />В одном направлении было бы полезно собирать информацию касаемо определённых процессов.<br />Все банально, условно! на примере автопрома:<br />Есть автомобиль, и нужно запилить мануал - как снять генератор, туда же может потом необходимо пихнуть инфу как сменить лампочку<br />На каком движке можно было бы условно-бесплатно родить mvp? Какие подводные камни?<br />Как быть с монетизацией в будущем, кроме как воткнуть баннер идей пока нет.</p>
+    </div>
+
+        
+        
+            
+            
+                
+<div class="content-info content-info--full l-island-a">
+    
+                <div class="content-info__item ">
+            
+<div
+    class="views"
+
+    
+        air-module="module.entryViews"
+
+    
+    data-content-id="95147"
+    data-value="668"
+    data-compact=""
+>
+    
+    <span class="views__value">668</span>
+
+            <span class="views__label">просмотров</span>
+    </div>
+        </div>
+    
+        </div>
+
+            
+        
+    
+    
+        
+        
+    
+    
+<!-- Podcasts on DTF -->
+
+</div>
+
+                                    
+<div class="content-footer content-footer--full l-island-a">
+                <div class="content-footer__item">
+            
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:95147,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/tjournal.ru\/dev\/95147-viki-dvizhki&quot;,&quot;gtm&quot;:&quot;&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:21,&quot;isAuthorized&quot;:false}    </textarea>
+</vue>
+        </div>
+    
+        <div class="content-footer__item content-footer__item--controls">
+        
+<vue name="layout-repost">
+    <textarea hidden>
+        {"contentId":95147,"count":0,"isReposted":false,"gtm":null}    </textarea>
+</vue>
+    </div>
+
+                <div class="content-footer__item">
+            
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:95147,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;&quot;}    </textarea>
+</vue>
+        </div>
+    
+        <div class="content-footer__item content-footer__item--share lm-hidden">
+        
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":95147,"gtm":null}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+
+        
+        <div class="content-footer__item content-footer__item--right">
+            
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:95147,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:0,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+        </div>
+
+    </div>
+                
+            </div>
+
+        </div>
+
+        <div class="l-hidden entry_data"
+             data-article-info='{
+                "author_name": "Иван Вундермахер",
+                "author_type": "self",
+                "tags": [],
+                "comments": 21,
+                "likes": 0,
+                "favorites": 0,
+                "is_advertisement": false,
+                "subsite_label": "dev",
+                "id": 95147,
+                "is_wide": true,
+                "is_ugc": true,
+                "date": "Sat, 27 Apr 2019 23:00:11 +0300",
+                "is_special": false            }'>
+        </div>
+
+                
+<div class="subsite-card-entry">
+    <div class="l-island-a">
+        
+<vue class="subsite-card subsite-card--loading" name="subsite-card">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:89086,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/u\/89086-ivan-vundermaher&quot;,&quot;name&quot;:&quot;\u0418\u0432\u0430\u043d \u0412\u0443\u043d\u0434\u0435\u0440\u043c\u0430\u0445\u0435\u0440&quot;,&quot;avatar&quot;:&quot;e91185ff-5a0d-c029-3c39-ab17701f8a44&quot;,&quot;karma&quot;:2154,&quot;description&quot;:&quot;&quot;,&quot;isMe&quot;:false,&quot;isPlus&quot;:false,&quot;isVerified&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;isShowMessengerButton&quot;:false,&quot;isShowSubscribe&quot;:true}    </textarea>
+</vue>
+    </div>
+</div>
+
+    </div>
+
+            <!-- #мегафон_какэтоработает branding -->
+        
+        <!-- #ДРМ_конкурс branding article footer-->
+        
+        <!-- #vcru_spotify branding -->
+        
+                
+        <!-- Native article footer html from subsite settings -->
+        
+    
+            
+            <div class="lm-mt-20 l-mt-28"></div>
+            
+<vue name="promo">
+    <textarea hidden class="l-hidden">
+        {
+            "osnovaUnitId": null,
+            "url": "https://booster.osnova.io/a/relevant?site=tj&v=2",
+            "place": "entry",
+            "site": "tj",
+            "settings": {&quot;modes&quot;:{&quot;externalLink&quot;:{&quot;buttonLabels&quot;:[&quot;\u0423\u0437\u043d\u0430\u0442\u044c&quot;,&quot;\u0427\u0438\u0442\u0430\u0442\u044c&quot;,&quot;\u041d\u0430\u0447\u0430\u0442\u044c&quot;,&quot;\u0417\u0430\u043a\u0430\u0437\u0430\u0442\u044c&quot;,&quot;\u041a\u0443\u043f\u0438\u0442\u044c&quot;,&quot;\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c&quot;,&quot;\u0421\u043a\u0430\u0447\u0430\u0442\u044c&quot;,&quot;\u041f\u0435\u0440\u0435\u0439\u0442\u0438&quot;]}},&quot;deviceList&quot;:{&quot;desktop&quot;:&quot;\u0414\u0435\u0441\u043a\u0442\u043e\u043f&quot;,&quot;smartphone&quot;:&quot;\u0421\u043c\u0430\u0440\u0442\u0444\u043e\u043d\u044b&quot;,&quot;tablet&quot;:&quot;\u041f\u043b\u0430\u043d\u0448\u0435\u0442\u044b&quot;}}        }
+    </textarea>
+</vue>
+
+            <div class="lm-mt-20 l-mt-28"></div>
+            
+
+<div class="vacancies_widget l-island-round" air-module="module.vacancy_widget" data-external="1" data-location="entry" data-analytics="Entry — Job Widget">
+
+    <div class="l-island-a l-pv-20">
+
+        <div class="vacancies_widget__header">
+
+            <a href="https://vc.ru/job" class="vacancies_widget__title" data-gtm="Vacancies — Entry Widget — Title — Clicked">Вакансии</a>
+
+            
+            <a class="vacancies_widget__new" href="https://vc.ru/job/new" data-gtm="Vacancies — Entry Widget — Create — Clicked">Разместить</a>
+
+        </div>
+
+        <div class="vacancies_widget__items l-mt-17 l-mb-20">
+
+            <div class="placeholder">
+                <div class="placeholder__item" style="width: 77%"></div>
+                <div class="placeholder__item" style="width: 70%"></div>
+                <div class="placeholder__item" style="width: 60%"></div>
+                <div class="placeholder__item" style="width: 70%"></div>
+                <div class="placeholder__item" style="width: 77%"></div>
+            </div>
+
+        </div>
+
+        <div class="vacancies_widget__footer">
+
+            <div class="vacancies_widget__load_more t-link" air-click="vacancies_widget_load_more">
+                <span>Показать ещё</span>
+                <svg class="icon icon--ui_arrow_down" width="10" height="8" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_arrow_down"></use></svg>            </div>
+
+            
+<span class="ui_preloader ">
+    <span class="ui_preloader__dot"></span>
+    <span class="ui_preloader__dot"></span>
+    <span class="ui_preloader__dot"></span>
+</span>
+
+            <a href="https://vc.ru/job" class="vacancies_widget__all t-link l-hidden" data-gtm="Vacancies — Entry Widget — All — Clicked">
+                <span>Все вакансии</span>
+                <svg class="icon icon--ui_arrow_right" width="10" height="10" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_arrow_right"></use></svg>            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+        
+        <!-- Adfox "1020х200 aka 1180х250_Interpool_баннер над комментариями_Desktop" format -->
+        
+<div class="propaganda" data-id="6"></div>
+
+        <!-- Adfox "Article Footer 100%_desktop_mobile" format -->
+        
+<div class="propaganda" data-id="7"></div>
+
+        
+            <!-- Native teaser before comments -->
+            <div class="lm-mt-20 l-mt-28">
+                            </div>
+
+        
+        <!-- Render special in the entry above comments -->
+                            
+        
+            <!-- Comments -->
+            <div class="l-island-bg l-island-round l-pv-32 lm-pv-20 lm-mt-20 l-mt-28">
+
+                
+<!-- *--* --- -- --- --* ** - *    ---- ** *-* *-*- * *--    --** *- *** - *- *-- *-** *-*- * -    *--* * *-* * -** * *-** -*-- *-- *- - -**-    -*- --- -- -- * -* - -*-- -->
+<div class="comments " air-module="module.comments" data-analytics="Comments" data-analytics-events="show">
+
+    <div class="comments_updates_rail">
+
+        <div class="comments_updates_rail__inner">
+
+            <div class="comments_updates comments_updates--zero t-no_select" data-gtm="Comments — Updates — Click">
+
+                <svg class="icon icon--updates_arrows" width="27" height="19" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#updates_arrows"></use></svg>
+                <span class="comments_updates__counter">0</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <textarea air-settings>
+        {
+            "id": 95147,
+            "author_id": 89086,
+            "diff_limit": 1000,
+            "urls": {"diff":"\/comments\/95147\/get","add":"\/comments\/95147\/add","edit":"\/comments\/edit","remove":"\/admin\/comments\/remove","pin":"\/admin\/comments\/pin","get4edit":"\/comments\/get4edit","complain":"\/comments\/complain","load_more":"\/comments\/loading\/95147"},
+            "attach_limit": 2,
+            "max_comment_text_length": 5000,
+            "subsite_id": 232424,
+            "last_count_and_date": null,
+            "is_enabled_donates": false,
+            "rolled_up": true,
+            "rolled_up_limit": 15,
+            "subscription_state": -1        }
+    </textarea>
+
+    <div class="comments__body">
+        <div class="comments-header l-island-a">
+                        <div class="comments-header__title comments__title" data-count="21">
+                21&nbsp;комментарий            </div>
+
+            <div class="comments-header__actions">
+                                                    <div class="comments-header__action" air-click="commentsActionShowSorting">
+                        <svg class="icon icon--v_block_set" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_block_set"></use></svg>                    </div>
+                
+                                <div
+                    class="comments-header__action comments-header__action--bell "
+                    data-titles="Подписаться на комментарии|Отписаться от комментариев"
+                    title="Подписаться на комментарии"
+                    air-click="commentsActionToggleSubscribe"
+                >
+                    <svg class="icon icon--v_bell" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_bell"></use></svg>                </div>
+            </div>
+        </div>
+
+                    <div class="comments__header l-island-a l-clear">
+                
+<div class="comments_pseudo_form " air-click="place_form?to=before_me" data-inversion="-1">
+    
+        <div class="comments_pseudo_form__text">Написать комментарий...</div>
+
+        <div class="comments_pseudo_form__buttons">
+            <div class="comments_pseudo_form__button"><svg class="icon icon--v_image" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_image"></use></svg></div>
+
+                    </div>
+
+    </div>
+            </div>
+        
+        
+        
+        
+        <div class="comments__content_wrapper " data-one-name="wrapper_93dce8eddc">
+            <div class="comments__content_wrapper__container">
+                <div class="comments__content l-island-a">
+<div
+    class="comment comment--with-no-replies"
+    data-id="2346108"
+    data-date="1556402891"
+    data-reply_to="0"
+    data-rating="5.3717654432039"
+    data-user_id="-1"
+    data-thread-id="25393686"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/66bd23a7-cf24-bc3a-b1df-16bdf2cdc2c1/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Новый хичхакер            </div>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346108"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346108">
+                <time class="time" air-module="module.date" data-date="1556402891" data-type="medium" title="28.04.2019 01:08:11 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>есть один такой движок<br>
+mediawiki. Висит на нем пара малоизвестных сайтов, но движок хороший, инфа 100-ка<br>
+<a href="https://www.mediawiki.org/wiki/MediaWiki" target="_blank">https://www.mediawiki.org/wiki/MediaWiki</a></p>                </div>
+            
+                        
+                                        
+    <div class="comment__attaches comment__media">
+        
+<a class="andropov_link andropov_link--with_image" href="https://www.mediawiki.org/wiki/MediaWiki?ref=tjournal.ru" target="_blank" rel="noopener noreferrer">
+
+    
+        
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/d3568967-666d-90da-3eb7-1cc73a914022/"
+    data-image-name=""
+            style=";background-color: #dab816;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>
+    
+    <div class="andropov_link__title">
+        MediaWiki    </div>
+
+    <div class="andropov_link__description">
+        MediaWiki    </div>
+
+    <div class="andropov_link__host">
+        <svg class="icon icon--v_go_to" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_go_to"></use></svg>        www.mediawiki.org    </div>
+
+</a>
+    </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346108&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346108"
+                    data-user-id="-1"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346108,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:6}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=25393686&parent=2346108"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment"
+    data-id="2345972"
+    data-date="1556396039"
+    data-reply_to="0"
+    data-rating="3.4346697198541"
+    data-user_id="233500"
+    data-thread-id="33ef02da"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/233500-sergey-gromkov"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/fdd7cabb-7226-37e6-fd3a-f165e3f6e66c/"
+    data-image-name=""
+            style=";background-color: #eaded3;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/233500-sergey-gromkov"
+                            >
+                Sergey Gromkov            </a>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345972"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345972">
+                <time class="time" air-module="module.date" data-date="1556396039" data-type="medium" title="27.04.2019 23:13:59 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Почему многие рассматривают интернет-проект, как актив? Типа, что он должен сам вам деньги приносить.</p><p>
+Посмотрите в сторону - интернет-проект, как реклама вашей профессиональной личности. Никаких баннеров, никаких платных подписок. Только бесплатный качественный контент. А бабло будете рубить за оффлайн деятельность, сделав себе имя благодаря проекту. </p><p>
+Если люди поймут, что вы профи, вас завалят предложениями заработать денег.</p><p>
+Совет диванного бизнес-тренера. Не благодарите.</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345972&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345972"
+                    data-user-id="233500"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345972,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:4}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=33ef02da&parent=2345972"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--with-no-replies"
+    data-id="2345980"
+    data-date="1556396284"
+    data-reply_to="2345972"
+    data-rating="0"
+    data-user_id="89086"
+    data-thread-id="33ef02da"
+    data-level="2"
+    data-display-level="2"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 2;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/e91185ff-5a0d-c029-3c39-ab17701f8a44/"
+    data-image-name=""
+            style=";background-color: #8d97a1;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                Иван Вундермахер            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2345972"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Sergey"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345972"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345980"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345980">
+                <time class="time" air-module="module.date" data-date="1556396284" data-type="medium" title="27.04.2019 23:18:04 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                                        <span class="comment__detail comment__detail--author">
+                    Автор
+                </span>
+            
+                                        <div class="comment__text">
+                    <p>Спасибо за комментарий</p><p>
+Это просто некие условия изначальные, что бы было понимание какое решение может подойти или нет.</p><p>
+Сейчас я посмотрел тот же moodle. Там есть некие курсы, а курсы могут давать рекламодатели. Вот и монетизация, и не за счёт пользователей.</p><p>
+Тема местечковая и узкопрофильная, на волстрит при взлёте меня не позовут точно лол</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345980&mode=reply&level=2"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345980"
+                    data-user-id="89086"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="2"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345980,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=33ef02da&parent=2345980"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment comment--with-no-replies"
+    data-id="2346089"
+    data-date="1556401703"
+    data-reply_to="0"
+    data-rating="3.4346697198541"
+    data-user_id="214923"
+    data-thread-id="db975698"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/214923-ilya-volochkov"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/9a47c02f-e231-b072-f786-aaffd7a800e4/"
+    data-image-name=""
+            style=";background-color: #e7dcd4;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/214923-ilya-volochkov"
+                            >
+                Илья Волочков            </a>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346089"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346089">
+                <time class="time" air-module="module.date" data-date="1556401703" data-type="medium" title="28.04.2019 00:48:23 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Это же ТЖ, какие автомобили, всё с мамками живут. Лучше создай сайт 'чио делать, когда съехали от мамки'.</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346089&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346089"
+                    data-user-id="214923"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346089,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:4}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=db975698&parent=2346089"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment comment--is-removed-creator"
+    data-id="2345958"
+    data-date="1556395343"
+    data-reply_to="0"
+    data-rating="1.628026447106"
+    data-user_id="5135"
+    data-thread-id="250ab2fd"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/fe72d5ec-359a-572d-8b04-764e67663332/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Аккаунт удален            </div>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345958"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345958">
+                <time class="time" air-module="module.date" data-date="1556395343" data-type="medium" title="27.04.2019 23:02:23 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Комментарий недоступен</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345958&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345958"
+                    data-user-id="5135"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345958,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:2}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=250ab2fd&parent=2345958"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply"
+    data-id="2345959"
+    data-date="1556395442"
+    data-reply_to="2345958"
+    data-rating="0.21050686581518"
+    data-user_id="89086"
+    data-thread-id="250ab2fd"
+    data-level="2"
+    data-display-level="2"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 2;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/e91185ff-5a0d-c029-3c39-ab17701f8a44/"
+    data-image-name=""
+            style=";background-color: #8d97a1;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                Иван Вундермахер            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2345958"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="DELETED"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345958"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345959"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345959">
+                <time class="time" air-module="module.date" data-date="1556395442" data-type="medium" title="27.04.2019 23:04:02 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                                        <span class="comment__detail comment__detail--author">
+                    Автор
+                </span>
+            
+                                        <div class="comment__text">
+                    <p>Есть ли примеры проектов под рукой? Можно ли потом в офлайн приложения инфу выгружать?</p><p>
+Викидвижок подходит тем, что наполнением занимаются пользователи самостоятельно </p><p>
+Спасибо</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345959&mode=reply&level=2"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345959"
+                    data-user-id="89086"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="2"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345959,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=250ab2fd&parent=2345959"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--is-removed-creator"
+    data-id="2345967"
+    data-date="1556395868"
+    data-reply_to="2345959"
+    data-rating="0.70168955271726"
+    data-user_id="5135"
+    data-thread-id="250ab2fd"
+    data-level="3"
+    data-display-level="3"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 3;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/fe72d5ec-359a-572d-8b04-764e67663332/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Аккаунт удален            </div>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2345959"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Иван"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345959"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345967"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345967">
+                <time class="time" air-module="module.date" data-date="1556395868" data-type="medium" title="27.04.2019 23:11:08 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Комментарий недоступен</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345967&mode=reply&level=3"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345967"
+                    data-user-id="5135"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="3"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345967,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:1}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=250ab2fd&parent=2345967"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--with-no-replies"
+    data-id="2345970"
+    data-date="1556395946"
+    data-reply_to="2345967"
+    data-rating="0"
+    data-user_id="89086"
+    data-thread-id="250ab2fd"
+    data-level="4"
+    data-display-level="4"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 4;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/e91185ff-5a0d-c029-3c39-ab17701f8a44/"
+    data-image-name=""
+            style=";background-color: #8d97a1;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                Иван Вундермахер            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2345967"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="DELETED"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345967"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345970"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345970">
+                <time class="time" air-module="module.date" data-date="1556395946" data-type="medium" title="27.04.2019 23:12:26 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                                        <span class="comment__detail comment__detail--author">
+                    Автор
+                </span>
+            
+                                        <div class="comment__text">
+                    <p>Спасибо, изучу на досуге это решение</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345970&mode=reply&level=4"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345970"
+                    data-user-id="89086"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="4"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345970,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=250ab2fd&parent=2345970"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment"
+    data-id="2346087"
+    data-date="1556401664"
+    data-reply_to="0"
+    data-rating="0.91219641853243"
+    data-user_id="-1"
+    data-thread-id="b8108334"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/0633c95b-b90e-969e-e331-0c72deea6b64/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Классный Никита            </div>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346087"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346087">
+                <time class="time" air-module="module.date" data-date="1556401664" data-type="medium" title="28.04.2019 00:47:44 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>в нормальных компаниях есть системы управления знаниями и их очень много, рыночек набит плотно. Confluence например один из примеров. (тут можно глянуть все <a href="https://www.capterra.com/knowledge-management-software" target="_blank">https://www.capterra.com/knowledge-management-software</a>) <br>
+Покупают такие штуки обычно IT - стартуют с IT систем.</p><p>
+баннеры говно, делай B2B</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346087&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346087"
+                    data-user-id="-1"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346087,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:1}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=b8108334&parent=2346087"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--is-removed-creator"
+    data-id="2346113"
+    data-date="1556403250"
+    data-reply_to="2346087"
+    data-rating="0.70168955271726"
+    data-user_id="42834"
+    data-thread-id="b8108334"
+    data-level="2"
+    data-display-level="2"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 2;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/fe72d5ec-359a-572d-8b04-764e67663332/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Аккаунт удален            </div>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2346087"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Классный"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346087"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346113"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346113">
+                <time class="time" air-module="module.date" data-date="1556403250" data-type="medium" title="28.04.2019 01:14:10 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Комментарий недоступен</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346113&mode=reply&level=2"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346113"
+                    data-user-id="42834"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="2"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346113,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:1}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=b8108334&parent=2346113"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply"
+    data-id="2346131"
+    data-date="1556405062"
+    data-reply_to="2346113"
+    data-rating="0"
+    data-user_id="-1"
+    data-thread-id="b8108334"
+    data-level="3"
+    data-display-level="3"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 3;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/0633c95b-b90e-969e-e331-0c72deea6b64/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Классный Никита            </div>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2346113"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="DELETED"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346113"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346131"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346131">
+                <time class="time" air-module="module.date" data-date="1556405062" data-type="medium" title="28.04.2019 01:44:22 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>не предлагаю конфлюенс<br>
+предлагаю думать в сторону b2b<br>
+потому что на баннерав в 2к19 не заработать</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346131&mode=reply&level=3"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346131"
+                    data-user-id="-1"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="3"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346131,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=b8108334&parent=2346131"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--with-no-replies"
+    data-id="2346236"
+    data-date="1556432430"
+    data-reply_to="2346131"
+    data-rating="0"
+    data-user_id="89086"
+    data-thread-id="b8108334"
+    data-level="4"
+    data-display-level="4"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 4;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/e91185ff-5a0d-c029-3c39-ab17701f8a44/"
+    data-image-name=""
+            style=";background-color: #8d97a1;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                Иван Вундермахер            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2346131"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Классный"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346131"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346236"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346236">
+                <time class="time" air-module="module.date" data-date="1556432430" data-type="medium" title="28.04.2019 09:20:30 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                                        <span class="comment__detail comment__detail--author">
+                    Автор
+                </span>
+            
+                                        <div class="comment__text">
+                    <p>Я походу запутал слегка присутствующих словом банер, и у всех сложилось впечатление, что речь об очередной контент-помойке и размещении на ней рекламных блоков яндекса и гугла))</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346236&mode=reply&level=4"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346236"
+                    data-user-id="89086"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="4"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346236,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=b8108334&parent=2346236"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment comment--with-no-replies"
+    data-id="2346136"
+    data-date="1556405719"
+    data-reply_to="0"
+    data-rating="0.70168955271726"
+    data-user_id="43395"
+    data-thread-id="9985e494"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/43395-yuriy-belousov"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://gif.cmtt.space/3/user-userpic/7c/c2/25/00953b70601f70.jpg"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/43395-yuriy-belousov"
+                            >
+                Юрий Белоусов            </a>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346136"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346136">
+                <time class="time" air-module="module.date" data-date="1556405719" data-type="medium" title="28.04.2019 01:55:19 (Europe/Moscow)">28.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Посмотри на gitbook</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346136&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346136"
+                    data-user-id="43395"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346136,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:1}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=9985e494&parent=2346136"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment"
+    data-id="2346023"
+    data-date="1556397910"
+    data-reply_to="0"
+    data-rating="0"
+    data-user_id="-1"
+    data-thread-id="9a1870c3"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/133d39cc-fe54-8af6-a298-7e3d9368cb8e/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Фирменный алмаз            </div>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346023"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346023">
+                <time class="time" air-module="module.date" data-date="1556397910" data-type="medium" title="27.04.2019 23:45:10 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>это же викихау получится, нет?</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346023&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346023"
+                    data-user-id="-1"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346023,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=9a1870c3&parent=2346023"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply"
+    data-id="2346026"
+    data-date="1556397953"
+    data-reply_to="2346023"
+    data-rating="0"
+    data-user_id="89086"
+    data-thread-id="9a1870c3"
+    data-level="2"
+    data-display-level="2"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 2;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/e91185ff-5a0d-c029-3c39-ab17701f8a44/"
+    data-image-name=""
+            style=";background-color: #8d97a1;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                Иван Вундермахер            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2346023"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Фирменный"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346023"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346026"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346026">
+                <time class="time" air-module="module.date" data-date="1556397953" data-type="medium" title="27.04.2019 23:45:53 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                                        <span class="comment__detail comment__detail--author">
+                    Автор
+                </span>
+            
+                                        <div class="comment__text">
+                    <p>Ну да, только очень локально в узкой нише, думаешь бессмысленно?</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346026&mode=reply&level=2"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346026"
+                    data-user-id="89086"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="2"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346026,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=9a1870c3&parent=2346026"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--with-no-replies"
+    data-id="2346033"
+    data-date="1556398148"
+    data-reply_to="2346026"
+    data-rating="-0.03505869498334"
+    data-user_id="-1"
+    data-thread-id="9a1870c3"
+    data-level="3"
+    data-display-level="3"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 3;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <div                class="comment__avatar"
+
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/133d39cc-fe54-8af6-a298-7e3d9368cb8e/"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </div>
+
+                        <div                class="comment__author"
+
+                            >
+                Фирменный алмаз            </div>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2346026"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Иван"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346026"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2346033"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2346033">
+                <time class="time" air-module="module.date" data-date="1556398148" data-type="medium" title="27.04.2019 23:49:08 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Не, не думаю, на викихау статьи непредсказуемого качества, так что может и взлететь. Разве что с ним по SEO тягаться трудно будет</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2346033&mode=reply&level=3"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2346033"
+                    data-user-id="-1"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="3"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2346033,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:-1}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=9a1870c3&parent=2346033"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment comment--with-no-replies"
+    data-id="2396268"
+    data-date="1558157134"
+    data-reply_to="0"
+    data-rating="0"
+    data-user_id="43207"
+    data-thread-id="d8165487"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/43207-azat-zagitov"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://gif.cmtt.space/3/user-userpic/fa/cf/8d/63fb190803fe05.jpg"
+    data-image-name=""
+            style=";background-color: #e0e0e0;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/43207-azat-zagitov"
+                            >
+                Азат Загитов            </a>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2396268"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2396268">
+                <time class="time" air-module="module.date" data-date="1558157134" data-type="medium" title="18.05.2019 08:25:34 (Europe/Moscow)">18.05.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>А чё Python, Django? Если в приложение куда-то инфу выкидывать - ставишь DRF и вперёд)</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2396268&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2396268"
+                    data-user-id="43207"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2396268,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=d8165487&parent=2396268"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment comment--with-no-replies"
+    data-id="3146586"
+    data-date="1583299703"
+    data-reply_to="0"
+    data-rating="0"
+    data-user_id="301652"
+    data-thread-id="33522f98"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/301652-callcenter-software"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/bb036f2c-95dc-65c9-2be7-851b6229cc6b/"
+    data-image-name=""
+            style=";background-color: #6c9c3c;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/301652-callcenter-software"
+                            >
+                callcenter software            </a>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=3146586"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=3146586">
+                <time class="time" air-module="module.date" data-date="1583299703" data-type="medium" title="04.03.2020 08:28:23 (Europe/Moscow)">4.03.2020</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <p>Enjoyed reading the article above , really explais everything in detail,the article is very interesting and effective.Thank you and good luck <br>
+for the upcoming articels Thanks &amp; Regards,<br>
+  From ivrs software.</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=3146586&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="3146586"
+                    data-user-id="301652"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:3146586,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=33522f98&parent=3146586"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+
+<div
+    class="comment"
+    data-id="2345961"
+    data-date="1556395639"
+    data-reply_to="0"
+    data-rating="-0.06959051491658"
+    data-user_id="236233"
+    data-thread-id="2dea0f4b"
+    data-level="1"
+    data-display-level="1"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 1;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/236233-mihail-makarov"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/60372934-a5fd-3b0e-02f0-edb97f37eaf0/"
+    data-image-name=""
+            style=";background-color: #b7ab6a;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/236233-mihail-makarov"
+                            >
+                Михаил Макаров            </a>
+
+                        
+                        
+                        
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345961"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345961">
+                <time class="time" air-module="module.date" data-date="1556395639" data-type="medium" title="27.04.2019 23:07:19 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <span class="comment-quote"><svg class="icon icon--comment_quote" width="16" height="12" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#comment_quote"></use></svg><span class="comment-quote__content">условно-бесплатно<br></span></span><p>
+Условно-беслатно можно пойти учить уроки. Чтобы в воскресенье с пацанами спокойно ягу попить.</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345961&mode=reply&level=1"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345961"
+                    data-user-id="236233"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="1"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345961,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:-4}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=2dea0f4b&parent=2345961"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply"
+    data-id="2345966"
+    data-date="1556395764"
+    data-reply_to="2345961"
+    data-rating="0"
+    data-user_id="89086"
+    data-thread-id="2dea0f4b"
+    data-level="2"
+    data-display-level="2"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 2;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/e91185ff-5a0d-c029-3c39-ab17701f8a44/"
+    data-image-name=""
+            style=";background-color: #8d97a1;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/89086-ivan-vundermaher"
+                            >
+                Иван Вундермахер            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2345961"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Михаил"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345961"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345966"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345966">
+                <time class="time" air-module="module.date" data-date="1556395764" data-type="medium" title="27.04.2019 23:09:24 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                                        <span class="comment__detail comment__detail--author">
+                    Автор
+                </span>
+            
+                                        <div class="comment__text">
+                    <p>Как жаль что пейвол убрали. </p><p>
+Я тебя лично не просил мне википедию поднять новую за доширак</p><p>
+Съебни)</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345966&mode=reply&level=2"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345966"
+                    data-user-id="89086"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="2"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345966,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=2dea0f4b&parent=2345966"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+
+<div
+    class="comment comment--reply comment--with-no-replies"
+    data-id="2345979"
+    data-date="1556396234"
+    data-reply_to="2345966"
+    data-rating="0"
+    data-user_id="236233"
+    data-thread-id="2dea0f4b"
+    data-level="3"
+    data-display-level="3"
+    data-is-max-level="0"
+    data-has-pre-max-level="0"
+    data-has-max-level="0"
+    data-donate="0"
+    data-replies-to-load="0"
+    style="--level: 3;"
+>
+        <div class="comment__branches"></div>
+
+    <div class="comment__content">
+        
+                        <a                class="comment__avatar"
+
+                                    href="https://tjournal.ru/u/236233-mihail-makarov"
+                            >
+                <div class="comment__avatar__image">
+                    
+<img
+    class="andropov_image "
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-src="https://leonardo.osnova.io/60372934-a5fd-3b0e-02f0-edb97f37eaf0/"
+    data-image-name=""
+            style=";background-color: #b7ab6a;"            src="data:image/gif;base64,R0lGODlhAQABAJAAAP8AAAAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="/>                </div>
+            </a>
+
+                        <a                class="comment__author"
+
+                                    href="https://tjournal.ru/u/236233-mihail-makarov"
+                            >
+                Михаил Макаров            </a>
+
+                        
+                        
+                                        <a
+                    class="comment__icon comment__icon-action"
+                    data-id="2345966"
+                    air-hover="comments_highlight_id"
+                    air-leave="comments_unhighlight_id"
+                    title="Иван"
+                    href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345966"
+                >
+                    <svg class="icon icon--v_arrow_long_up" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_long_up"></use></svg>                </a>
+            
+                        <div
+                class="comment__icon comment__icon-action comment__copy-link"
+                air-click="copy_comment_link?id=2345979"
+                title="Скопировать ссылку"
+            >
+                <svg class="icon icon--v_link" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_link"></use></svg>            </div>
+
+            <div class="comment__break"></div>
+
+                        <a class="comment__detail" href="https://tjournal.ru/dev/95147-viki-dvizhki?comment=2345979">
+                <time class="time" air-module="module.date" data-date="1556396234" data-type="medium" title="27.04.2019 23:17:14 (Europe/Moscow)">27.04.2019</time>            </a>
+
+                        
+                        
+                                        <div class="comment__text">
+                    <span class="comment-quote"><svg class="icon icon--comment_quote" width="16" height="12" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#comment_quote"></use></svg><span class="comment-quote__content">пейвол<br></span></span><p>
+што?</p>                </div>
+            
+                        
+                        
+                                        <div
+                    class="comment__action"
+                    air-click="place_form?to=item&id=2345979&mode=reply&level=3"
+                >
+                    Ответить                </div>
+            
+                                        <div
+                    class="comment__action"
+                    air-module="module.etc_controls"
+                    data-analytics-event-name="Comments — More — Click"
+                    data-permissions="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNvcHlfY29tbWVudF9saW5rIjpudWxsLCJjb21wbGFpbl9jb21tZW50IjowfSwiaWF0IjoxNjYxNjg3MTkwLCJleHAiOjE2NjE3NzM1OTB9.VxBwTRKqdZ_nrwdSPLQkhdOMPmWU9QXbY0F0Vrtxrh4"
+                    data-type="4"
+                    data-content-id="95147"
+                    data-comment-id="2345979"
+                    data-user-id="236233"
+                    data-subsite-id="232424"
+                    data-ban-state="0"
+                    data-pin_comment-state="0"
+                    data-favorite_toggle-state=""
+                    data-author-is-user="1"
+                    data-level="3"
+                >
+                    <svg class="icon icon--v_etc" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_etc"></use></svg>                </div>
+            
+                                        
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:2345979,&quot;type&quot;:4,&quot;typeStr&quot;:&quot;comment&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:95147,&quot;subsite&quot;:{&quot;id&quot;:232424,&quot;name&quot;:&quot;\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/867ff9bd-90fa-d769-8b7e-af8a4ff36c70\/&quot;,&quot;url&quot;:&quot;https:\/\/tjournal.ru\/dev&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;content&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+            
+        
+        <div class="comment__break"></div>
+
+                
+                <div
+            class="comment__expand-branch comment__inline-action"
+            air-click="comments_expand_branch"
+            data-id="thread=2dea0f4b&parent=2345979"
+        >
+            Развернуть ветку
+        </div>
+
+                    </div>
+</div>
+
+</div>
+
+                
+                
+                <div class="comments__footer l-island-a">
+                    
+<div class="comments_pseudo_form " air-click="place_form?to=before_me" data-inversion="1">
+    
+        <div class="comments_pseudo_form__text">Написать комментарий...</div>
+
+        <div class="comments_pseudo_form__buttons">
+            <div class="comments_pseudo_form__button"><svg class="icon icon--v_image" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_image"></use></svg></div>
+
+                    </div>
+
+    </div>
+
+                    
+<div class="comment-writing" data-comments="writing">
+    <div class="comment-writing__branches">
+        <div
+            class="comment__branch"
+            air-hover="comments_highlight_branch"
+            air-leave="comments_unhighlight_branch"
+            air-click="comments_collapse_branch"
+            data-comments="branch"
+        ></div>
+    </div>
+
+    <div class="comment-writing__content">
+
+        <div class="comment-form" data-comments="form">
+            
+                <div class="comment-form__editor" data-comments="editor"></div>
+
+                    </div>
+
+    </div>
+</div>
+                </div>
+            </div>
+
+                        <div class="comments__content_wrapper__button l-pt-30">
+                <div class="ui-button ui-button--1" data-one-click="add_mod:wrapper_93dce8eddc:open" data-gtm="Comments — Show All — Clicked">
+                    Читать все 21&nbsp;комментарий                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+            </div>
+
+        
+                    
+            <div
+                class="lm-mt-20 l-mt-28 l-island-a recommendation-feed"
+                data-analytics="Recommendations"
+                data-clickhouse-analytics="{&quot;show&quot;:&quot;recommendations_viewed&quot;}"
+            >
+                <div class="feed"
+                    air-module="module.feed"
+                    data-feed-id="8bdef0ab02"
+                    data-feed-more-url="/recommended"
+                    data-feed-last-sorting-value="1"
+                    data-feed-last-id=""
+                    data-feed-exclude-ids=""
+                    data-feed-content-id="95147">
+
+                    <div class="feed__container">
+                    </div>
+
+                    <div class="feed__horizon l-pv-25 l-island-round" id="feed_horizon_8bdef0ab02">
+                        
+<span class="ui_preloader ">
+    <span class="ui_preloader__dot"></span>
+    <span class="ui_preloader__dot"></span>
+    <span class="ui_preloader__dot"></span>
+</span>
+                    </div>
+                </div>
+            </div>
+
+        
+    
+</div>
+
+                </div>
+
+            </div>
+
+            <div class="layout__right-column">
+                
+<div class="live" air-module="module.live"></div>
+            </div>
+        </div>
+
+        <vue name="mobile-site-footer"></vue>
+
+        <!-- Audio Player - temporary place & sons (established in August 2018) -->
+        <div class="floating_player floating_player--hidden"></div>
+
+                    <air module="module.propaganda">
+                <textarea air-settings>
+                    [{"id":1,"label":"Header, 100%x250: D","provider":"adfox","adaptive":["desktop"],"adfox_method":"createAdaptive","auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"ezfl"}},"distribution":"top-desktop"},{"id":2,"label":"Header, 1200x400\/600: M","provider":"adfox","adaptive":["phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"ezfn"}},"distribution":"top-mobile"},{"id":4,"label":"Article Branding top","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"cfovy","p2":"glug"}}},{"id":5,"label":"300x600: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"ezfk"}},"distribution":"right-sidebar"},{"id":6,"label":"Above the Comments: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"h","ps":"cndo","p2":"ffyh"}},"distribution":"before-comments-desktop"},{"id":7,"label":"Above the Comments: M","provider":"adfox","adaptive":["desktop","tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"byswn","p2":"fjxb"}},"distribution":"before-comments-mobile"},{"id":12,"label":"Topbar button: D","provider":"adfox","adaptive":["desktop","tablet"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"fdhx"}}},{"id":13,"label":"In Article: M","provider":"adfox","adaptive":["phone"],"adfox":{"ownerId":228129,"params":{"pp":"h","ps":"cndo","p2":"flvn"}}},{"id":15,"label":"In-Feed Teaser: DM","provider":"adfox","adaptive":["desktop","tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"byudv","p2":"ftjf"}}},{"id":16,"label":"Topbar button: M","provider":"adfox","adaptive":["tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"ccydt","p2":"ftwx"}}},{"id":17,"label":"Stratum: D","provider":"adfox","adaptive":["desktop"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"fzvb"}}},{"id":18,"label":"Stratum: M","provider":"adfox","adaptive":["tablet","phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"fzvc"}}},{"id":19,"label":"Under the News Teaser: DM","provider":"adfox","adaptive":["desktop","tablet","phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"p1":"cmtwf","p2":"gazs"}}},{"id":20,"label":"Leftbar button: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"chfbk","p2":"gnwc"}}},{"id":21,"label":"Header Microteaser: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"gtjk"}}},{"id":23,"label":"In Article: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"cndo","p2":"hiig"}}}]                </textarea>
+            </air>
+        
+                            <air module="module.hawk">
+                
+                <textarea air-settings>
+                    {"token":"eyJpbnRlZ3JhdGlvbklkIjoiOWMxODhjZGQtMWM4NS00YmYzLWJmNmQtNDk5ZDE4NjdmOGNmIiwic2VjcmV0IjoiYzUwNzE4ZmEtZDUwMC00OTA1LWIzZDYtY2RlYmNhMzU3YjY0In0=","release":"0c42fddd"}                </textarea>
+            </air>
+        
+                <air module="module.liveStream">
+            <air-settings>
+                null            </air-settings>
+        </air>
+
+        
+        <script>
+            window.__delegated_data = {"module.page":{"navigation_name":"dev","sorting_name":"popular","is_content":true,"subsite":{"id":232424,"name":"Разработка","avatar":{"type":"image","data":{"uuid":"867ff9bd-90fa-d769-8b7e-af8a4ff36c70","width":1000,"height":1000,"size":131754,"type":"png","color":"b8b8b8","hash":"","external_service":[]}},"uri":"\/dev","url":"https:\/\/tjournal.ru\/dev"},"layout_options":{"content":"content-entry","leftColumn":"left-column-on","rightColumn":"right-column-on","propaganda":"propaganda-on","livestream":"livestream-on","contentSidebarAlign":"content-sidebar-align-right","rightColumnReserve":"right-column-reserve-on"}},"module.ajaxify":{"title":"Вики-движки — Разработка на TJ"},"module.auth":{"subscribed_ids":[],"ignored_ids":[]},"module.sidebar":{"desktop":[{"name":"siteNavigation","type":"tree-list","options":{"caption":{"text":""},"limit":0,"items":[{"text":"Популярное","url":"\/popular","icon":"ui_sidebar_feed","gtm":"Menu — Popular Feed — Click"},{"text":"Свежее","url":"\/new","icon":"ui_sidebar_recent_big","gtm":"Menu — New Feed — Click"},{"text":"Рейтинг TJ","url":"\/rating","slug":"Subsites rating","icon":"ui_sidebar_rating"},{"text":"Подписки","url":"\/subs","slug":"subscriptions","icon":"ui_sidebar_subscriptions"},{"text":"{<div class=\"propaganda\" data-id=\"20\"><\/div>}","url":""}],"gtm":["Sidebar","SiteNavigation"]}},{"name":"subscriptions","type":"tree-list","options":{"caption":{"text":""},"limit":5,"items":[{"text":"Новости","url":"https:\/\/tjournal.ru\/news","id":245416,"image":{"type":"image","data":{"uuid":"2810b9bb-071f-8a49-2290-2f92ca6797cd","width":400,"height":400,"size":23206,"type":"png","color":"fbf3e3","hash":"","external_service":[]}},"favourite":false},{"text":"Интернет","url":"https:\/\/tjournal.ru\/internet","id":214343,"image":{"type":"image","data":{"uuid":"74355c2a-cf87-ffba-aebf-45ae3bc8d1d8","width":450,"height":450,"size":339134,"type":"png","color":"fb34b3","hash":"12120f574f0527","external_service":[]}},"favourite":false},{"text":"Разборы","url":"https:\/\/tjournal.ru\/analysis","id":245417,"image":{"type":"image","data":{"uuid":"98aa07b9-378a-08b8-c4db-f9796f86b494","width":400,"height":400,"size":27162,"type":"png","color":"050505","hash":"","external_service":[]}},"favourite":false},{"text":"Истории","url":"https:\/\/tjournal.ru\/stories","id":214351,"image":{"type":"image","data":{"uuid":"acd98182-a0f2-6b68-5bec-1f6d9d46e7fe","width":200,"height":200,"size":114876,"type":"png","color":"480e0c","hash":"","external_service":[]}},"favourite":false},{"text":"Технологии","url":"https:\/\/tjournal.ru\/tech","id":214344,"image":{"type":"image","data":{"uuid":"6b3d55b6-65a0-129c-18da-09ee4d987819","width":400,"height":400,"size":421938,"type":"png","color":"1e60d9","hash":"","external_service":[]}},"favourite":false},{"text":"Гость TJ","url":"https:\/\/tjournal.ru\/guest","id":245667,"image":{"type":"image","data":{"uuid":"a943773f-e9f6-b225-1bdf-417debc7647c","width":600,"height":600,"size":457455,"type":"png","color":"8e9d6c","hash":"","external_service":[]}},"favourite":false}],"gtm":["Sidebar","Subscriptions"]}},{"name":"footer","type":"footer","options":{"links":{"ios":"https:\/\/itunes.apple.com\/ru\/app\/id683103523","android":"https:\/\/play.google.com\/store\/apps\/details?id=ru.kraynov.app.tjournal"},"sponsor":{"title":"Спонсоры TJ","href":"\/plus"}}}],"mobile":[{"name":"siteNavigation","type":"tree-list","options":{"caption":{"text":""},"limit":0,"items":[{"text":"Популярное","url":"\/popular","icon":"ui_sidebar_feed","gtm":"Menu — Popular Feed — Click"},{"text":"Свежее","url":"\/new","icon":"ui_sidebar_recent_big","gtm":"Menu — New Feed — Click"},{"text":"Рейтинг TJ","url":"\/rating","slug":"Subsites rating","icon":"ui_sidebar_rating"},{"text":"Подписки","url":"\/subs","slug":"subscriptions","icon":"ui_sidebar_subscriptions"},{"text":"{<div class=\"propaganda\" data-id=\"20\"><\/div>}","url":""}],"gtm":["Sidebar","SiteNavigation"]}},{"name":"writeButton","type":"write-button","options":{"text":"Новая запись"}},{"name":"subscriptions","type":"tree-list","options":{"caption":{"text":""},"limit":5,"items":[{"text":"Новости","url":"https:\/\/tjournal.ru\/news","id":245416,"image":{"type":"image","data":{"uuid":"2810b9bb-071f-8a49-2290-2f92ca6797cd","width":400,"height":400,"size":23206,"type":"png","color":"fbf3e3","hash":"","external_service":[]}},"favourite":false},{"text":"Интернет","url":"https:\/\/tjournal.ru\/internet","id":214343,"image":{"type":"image","data":{"uuid":"74355c2a-cf87-ffba-aebf-45ae3bc8d1d8","width":450,"height":450,"size":339134,"type":"png","color":"fb34b3","hash":"12120f574f0527","external_service":[]}},"favourite":false},{"text":"Разборы","url":"https:\/\/tjournal.ru\/analysis","id":245417,"image":{"type":"image","data":{"uuid":"98aa07b9-378a-08b8-c4db-f9796f86b494","width":400,"height":400,"size":27162,"type":"png","color":"050505","hash":"","external_service":[]}},"favourite":false},{"text":"Истории","url":"https:\/\/tjournal.ru\/stories","id":214351,"image":{"type":"image","data":{"uuid":"acd98182-a0f2-6b68-5bec-1f6d9d46e7fe","width":200,"height":200,"size":114876,"type":"png","color":"480e0c","hash":"","external_service":[]}},"favourite":false},{"text":"Технологии","url":"https:\/\/tjournal.ru\/tech","id":214344,"image":{"type":"image","data":{"uuid":"6b3d55b6-65a0-129c-18da-09ee4d987819","width":400,"height":400,"size":421938,"type":"png","color":"1e60d9","hash":"","external_service":[]}},"favourite":false},{"text":"Гость TJ","url":"https:\/\/tjournal.ru\/guest","id":245667,"image":{"type":"image","data":{"uuid":"a943773f-e9f6-b225-1bdf-417debc7647c","width":600,"height":600,"size":457455,"type":"png","color":"8e9d6c","hash":"","external_service":[]}},"favourite":false}],"gtm":["Sidebar","Subscriptions"]}},{"name":"footer","type":"footer","options":{"links":{"ios":"https:\/\/itunes.apple.com\/ru\/app\/id683103523","android":"https:\/\/play.google.com\/store\/apps\/details?id=ru.kraynov.app.tjournal"},"sponsor":{"title":"Спонсоры TJ","href":"\/plus"}}}]}};
+            /**
+             * @deprecated              */
+            window.__codename = 'tj';
+            window.__apptitle = 'TJ';
+            /**
+             * @deprecated              */
+            window.__domain = 'tjournal.ru';
+            window.__apple_web_push_id = 'web.ru.tjournal.push';
+            window.__static_version = '0c42fddd';
+            window.__specials_version = '81cabf8f';
+            window.__specials_cdn = 'https://specials-f378ef5.servicecdn.ru/';
+            window.__waterfall_space_id = '53';
+            window.__static_path = '/static/build/tjournal.ru';
+            window.__email_auth = true;
+            window.__email_registration = true;
+            window.__auth_cover_images = 'b6bd61b5-eb5b-34db-8501-2fcc54cd051b';
+            window.__auth_logo_width = 35;
+            window.__auth_logo_height = 35;
+            window.__auth_logo_color = '#000000';
+            window.__auth_buttons = ["email","vk","gg","fb","tw","apple"];
+            window.__debug = false;
+            window.__ad_site_name = 'TJournal';
+            window.__is_app = false;
+            window.__global_modules = 'module.appDocumentResize, module.page, module.ajaxify, module.fingerprint, module.static_version_watcher, module.popup, module.misprint, module.pixels, module.buyClubAccount, module.universal_action, module.iframe_lazy_load, module.audio_controller, module.analytics, module.analytics_events, module.clickhouse_analytics, module.captcha, module.one, module.subsite_admin, module.sidebar, module.nativeAd, module.andropov, module.inputs, module.push2, module.radioButtons, module.checkboxes, module.evaluate_script, module.hawk, module.comments, module.instagram_frames, module.auth, module.subsitesTunePopup, module.newEntriesHorizon, module.boosterConstructor, module.actionsAnalytics, module.writing, module.scrollLocker, module.live, module.distribution, module.vueMate';
+            window.__dates_behavior = {"daily":{"[today]":"{time} \/\/ 3600","*":"{dayN}.{monthNN} \/\/ 0"},"full":{"[thisyear]":"{dayN} {monthShort} \u0432 {time} \/\/ 3600","*":"{dayN}.{monthNN}.{year} \u0432 {time} \/\/ 3600"},"[:59sec]":{"short":"\/\/ 30","medium":"\u0441\u0435\u0439\u0447\u0430\u0441 \/\/ 30","*":"\u0442\u043e\u043b\u044c\u043a\u043e \u0447\u0442\u043e \/\/ 30"},"[:119sec]":{"short":"{minDiff}\u043c \/\/ 30","medium":"{minDiff} \u043c\u0438\u043d \/\/ 30","*":"\u043c\u0438\u043d\u0443\u0442\u0443 \u043d\u0430\u0437\u0430\u0434 \/\/ 30"},"[:59.9min]":{"short":"{minDiff}\u043c \/\/ 60","medium":"{minDiff} \u043c\u0438\u043d \/\/ 60","*":"{minDiff} {minDiffWord} \u043d\u0430\u0437\u0430\u0434 \/\/ 60"},"[:119.9min]":{"short":"{hourDiff}\u0447 \/\/ 1800","medium":"{hourDiff} {hourDiffWord} \/\/ 60","*":"\u0447\u0430\u0441 \u043d\u0430\u0437\u0430\u0434 \/\/ 1800"},"medium":{"[:719min]":"{hourDiff} {hourDiffWord} \/\/ 60"},"[:4hour]":{"short":"{hourDiff}\u0447 \/\/ 1800","*":"{hourDiff} {hourDiffWord} \u043d\u0430\u0437\u0430\u0434 \/\/ 1800"},"[today]":{"short":"{time} \/\/ 3600","medium":"{time} \/\/ 3600","*":"\u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0432 {time} \/\/ 3600"},"[yesterday]":{"short":"\u0432\u0447\u0435\u0440\u0430 \/\/ 3600","medium":"\u0432\u0447\u0435\u0440\u0430 \/\/ 3600","*":"\u0432\u0447\u0435\u0440\u0430 \u0432 {time} \/\/ 3600"},"[thisyear]":{"short":"{dayN} {monthShort} \/\/ 0","medium":"{dayN} {monthShort} \/\/ 0","*":"{dayN} {monthShort} \u0432 {time} \/\/ 3600"},"*":{"short":"{dayN}.{monthNN}.{year} \/\/ 0","medium":"{dayN}.{monthNN}.{year} \/\/ 0","*":"{dayN} {monthShort} {year} \/\/ 0"}};
+            window.__site_logo_size = [32, 50];
+            window.__bugsSubsiteId = parseInt('214364', 10);
+            window.__complain_reasons = ["","\u0421\u043f\u0430\u043c","\u041e\u0441\u043a\u043e\u0440\u0431\u043b\u0435\u043d\u0438\u0435","\u041d\u0430\u0440\u0443\u0448\u0435\u043d\u0438\u0435 \u0437\u0430\u043a\u043e\u043d\u0430","\u041f\u043e\u0440\u043d\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u043d\u0442\u0435\u043d\u0442","\u041d\u0430\u0441\u0438\u043b\u0438\u0435","\u0410\u0432\u0442\u043e\u0440\u0441\u043a\u0438\u0435 \u043f\u0440\u0430\u0432\u0430","\u0412\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0432 \u0437\u0430\u0431\u043b\u0443\u0436\u0434\u0435\u043d\u0438\u0435","\u0414\u0440\u0443\u0433\u043e\u0435"];
+            window.__i18nLocale = 'ru_RU';
+        </script>
+
+        
+            <script>
+                /* Hide Android smart banner */
+                window.addEventListener('beforeinstallprompt', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+            </script>
+
+        
+        <script>
+            (function(window, document, undefined) {
+
+                function DOMReady(onInteractive, onComplete) {
+                    document.onreadystatechange = function() {
+                        var state = document.readyState;
+
+                        if (state === 'interactive' && onInteractive !== undefined) {
+                            onInteractive();
+                        }
+
+                        if (state === 'complete' && onComplete !== undefined) {
+                            onComplete();
+                        }
+                    };
+                }
+
+                function loadSvgSprite( callback ) {
+                    var req = new XMLHttpRequest();
+
+                    req.onload = function (e) {
+                        /**
+                         * Wrap svg element in div to avoid certain bugs (e.g. gradient fills not working)
+                         * @link https://stackoverflow.com/questions/24806913/how-can-i-refer-to-an-internal-gradient-definition-inside-an-svg-sprite-symbol
+                         */
+                        var svgContainer = document.createElement('div');
+                        var svg = document.implementation.createHTMLDocument( '' );
+
+                        svgContainer.style.position = 'absolute';
+                        svgContainer.style.width = 0;
+                        svgContainer.style.height = 0;
+                        svgContainer.style.overflow = 'hidden';
+                        svgContainer.style.zIndex = -9999;
+
+                        svg.body.innerHTML = e.target.response;
+                        svgContainer.appendChild(svg.body.firstElementChild);
+                        document.body.appendChild(svgContainer);
+                        svg = null;
+
+                        if ( callback !== undefined ) {
+                            callback();
+                        }
+                    };
+
+                    req.open('GET', 'https://tjournal.ru/static/build/tjournal.ru/symbols.0c42fddd.svg', true);
+
+                    req.responseType = 'text';
+
+                    req.send();
+                }
+
+                DOMReady(function() {
+                    loadSvgSprite( function() {} );
+                }, function() {});
+
+            })(window, document);
+        </script>
+
+        <script>
+            /**
+             * Load different js bundles depends on `module` supporting
+             */
+            (function (scriptTag, es6, es5) {
+                var isSupportsModules = 'noModule' in scriptTag;
+                var isSupportsFeatures = typeof Object.fromEntries === 'function';
+                var isIe = /MSIE|Edge/.test(window.navigator.userAgent);
+                var isSafari13 = typeof BigInt !== 'function'; // Detect Safari 13 through the feature it does not support, e.g. BigInt (related to issue INT-1004)
+
+                if (isSupportsModules && isSupportsFeatures && !isIe && !isSafari13) {
+                    scriptTag.type = 'module';
+                    scriptTag.src = es6;
+                } else {
+                    scriptTag.async = true;
+                    scriptTag.src = es5;
+                }
+
+                scriptTag.crossorigin = 'crossorigin';
+                document.head.appendChild(scriptTag);
+
+            })(document.createElement('script'), '../../js/main.13a984d7.es6.min.js', '../../js/main.13a984d7.es5.min.js');
+        </script>
+
+    </body>
+</html>
